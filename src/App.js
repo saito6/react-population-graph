@@ -60,7 +60,7 @@ class App extends Component {
       const series_copy = this.state.series.slice();
       // チェック済みの場合はseriesから削除
       for (let i = 0; i < series_copy.length; i++) {
-        if (series_copy[i].name == this.state.prefectures[index].prefName) {
+        if (series_copy[i].name === this.state.prefectures[index].prefName) {
           series_copy.splice(i, 1);
         }
       }
@@ -75,14 +75,14 @@ class App extends Component {
     return (
       <div
         key={props.prefCode}
-        style={{ margin: '5px', display: 'inline-block' }}
+        className="checkbox"
       >
         <input
-          type="checkbox"
+          type="checkbox" id={props.prefCode}
           checked={this.state.selected[props.prefCode - 1]}
           onChange={() => this._changeSelection(props.prefCode - 1)}
         />
-        {props.prefName}
+        <label htmlFor={props.prefCode}>{props.prefName}</label>
       </div>
     );
   }
@@ -117,7 +117,7 @@ class App extends Component {
     return (
       <div className="container">
         <h1>都道県別の総人口推移</h1>
-        <div className="highcharts__checkbox">{Object.keys(obj).map(i => this.renderItem(obj[i]))}</div>
+        <div className="highcharts__pref">{Object.keys(obj).map(i => this.renderItem(obj[i]))}</div>
         <div className="highcharts__graph"><HighchartsReact highcharts={Highcharts} options={options} /></div>
       </div>
     );
