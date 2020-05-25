@@ -12,7 +12,7 @@ In the project directory, you can run:
 
 and, write the next code in apiKey.js file
 
-### `export default 'Your API KEY';`
+ `export default 'Your API KEY';`
 
 
 ### `yarn start`
