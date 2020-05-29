@@ -6,9 +6,7 @@ In the project directory, you can run:
 
 ### `yarn install`
 
-### `npm install -save highcharts-react-official highcharts`
-
-### `mkdir apiKey.js`
+### `touch src/apiKey.js`
 
 and, write the next code in apiKey.js file
 
